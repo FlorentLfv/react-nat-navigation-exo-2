@@ -1,24 +1,20 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import CustomStack from './nav/CustomStack';
-import PhotoScreen from './screens/PhotoScreen';
-import CharacterScreen from './screens/CharacterScreen';
-import BiographyScreen from './screens/BiographyScreen';
+import HomeScreen from './screens/HomeScreen';
 
-const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Accueil" component={CustomStack} />
-        <Drawer.Screen name="Photo" component={PhotoScreen} />
-        <Drawer.Screen name="Personnage" component={CharacterScreen} />
-        <Drawer.Screen name="Biographie" component={BiographyScreen} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Accueil" component={HomeScreen} />
+        <Stack.Screen name="Contenu" component={CustomStack} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

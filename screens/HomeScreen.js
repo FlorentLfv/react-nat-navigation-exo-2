@@ -7,7 +7,7 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.container}>
             <Text style={styles.textCentered}>Bienvenue dans mon application</Text>
             <Button title="Ada LOVELACE" onPress={() =>
-                navigation.navigate('Photo')
+                navigation.navigate('Contenu')
             }
             />
         </View>

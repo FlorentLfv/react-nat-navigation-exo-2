@@ -1,17 +1,20 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import HomeScreen from '../screens/HomeScreen';
+
+import CharacterScreen from '../screens/CharacterScreen';
+import BiographyScreen from '../screens/BiographyScreen';
 import PhotoScreen from '../screens/PhotoScreen';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function CustomStack() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Bienvenue" component={HomeScreen} />
-            <Stack.Screen name="Photo" component={PhotoScreen} />
-        </Stack.Navigator>
+        <Drawer.Navigator>
+            <Drawer.Screen name="Photo" component={PhotoScreen} />
+            <Drawer.Screen name="Ada LOVELACE" component={CharacterScreen} />
+            <Drawer.Screen name="Biographie" component={BiographyScreen} />
+        </Drawer.Navigator>
     )
 }
